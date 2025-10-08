@@ -75,7 +75,7 @@ const expCards = [
   {
     title: "Portfolio 2025",
     imgPath: "/images/screens/portfolio-25.png",
-    ghlink: "",
+    ghlink: "https://github.com/Canacepa/portfolio-3d",
     tech: "HTML · CSS · JAVASCRIPT · REACT · THREE.JS · GSAP ",
     description: [
       "Portfolio 3D interactif et immersif mettant en valeur mes compétences en développement web.",
@@ -106,6 +106,7 @@ const expCards = [
   {
     title: "Enchanted Decks",
     imgPath: "/images/screens/EnchantedDecks.png",
+    link: "https://enchanted-decks.netlify.app/",
     ghlink: "https://github.com/Canacepa-Alex/EnchantedDecks-client",
     ghlink2: "https://github.com/Canacepa-Alex/EnchantedDecks-server",
     tech: "HTML · CSS · JAVASCRIPT · REACT · REST API · EXPRESS · MONGODB",
@@ -128,6 +129,7 @@ const expCards = [
   {
     title: "Alien Explorer",
     imgPath: "/images/screens/AlienExplorer.png",
+    link: "https://github.com/Canacepa/Alien-Explorer/deployments/github-pages",
     ghlink: "https://github.com/Canacepa/Alien-Explorer",
     tech: "HTML · CSS · JAVASCRIPT · CANVAS",
     description: [
