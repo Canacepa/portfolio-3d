@@ -4,7 +4,7 @@ const navLinks = [
     link: "#work",
   },
   {
-    name: "Skills",
+    name: "Compétences",
     link: "#skills",
   },
 ];
@@ -12,12 +12,12 @@ const navLinks = [
 const words = [
   { text: "Créative", imgPath: "/images/hero/ideas.svg" },
   { text: "Entrepreneuse", imgPath: "/images/hero/concepts.svg" },
-  { text: "Minutieuse", imgPath: "/images/hero/designs.svg" },
-  { text: "Dévelopeuse", imgPath: "/images/hero/code.svg" },
+  { text: "Persévérante", imgPath: "/images/hero/designs.svg" },
+  { text: "Développeuse", imgPath: "/images/hero/code.svg" },
   { text: "Créative", imgPath: "/images/hero/ideas.svg" },
   { text: "Entrepreneuse", imgPath: "/images/hero/concepts.svg" },
-  { text: "Minutieuse", imgPath: "/images/hero/designs.svg" },
-  { text: "Dévelopeuse", imgPath: "/images/hero/code.svg" },
+  { text: "Persévérante", imgPath: "/images/hero/designs.svg" },
+  { text: "Développeuse", imgPath: "/images/hero/code.svg" },
 ];
 
 const abilities = [
@@ -78,7 +78,8 @@ const expCards = [
     ghlink: "https://github.com/Canacepa/portfolio-3d",
     tech: "HTML · CSS · JAVASCRIPT · REACT · THREE.JS · GSAP ",
     description: [
-      "Portfolio 3D interactif et immersif mettant en valeur mes compétences en développement web.",
+      "Portfolio 3D interactif et immersif, animation et interactivité.",
+      "Conçu pour présenter mes projets et compétences à travers une navigation fluide et visuellement engageante.",
     ],
   },
   {
@@ -89,14 +90,14 @@ const expCards = [
     tech: "HTML · CSS · JAVASCRIPT · REST API · EXPRESS · MONGODB · FIGMA",
     description: [
       "Refonte complète du site web de la Fromagerie Planchon pour améliorer l'expérience utilisateur et intégrer un système de mise en avant des produits mensuels.",
-      "Créer sur Figma dans un premier temps des maquettes pour valider le design avec le client.",
+      "Créer dans un premier temps sur Figma pour valider le design avec le client.",
       "Premier projet professionnel en tant que développeuse web.",
     ],
   },
   {
     title: "Portfolio 2022",
     imgPath: "/images/screens/portfolio-22.png",
-    link: "http://portfolio22.canacepa.com/",
+    link: "https://portfolio22.canacepa.com/",
     ghlink: "https://github.com/Canacepa/portfolio",
     tech: "HTML · CSS · JAVASCRIPT · REACT",
     description: [
@@ -129,7 +130,7 @@ const expCards = [
   {
     title: "Alien Explorer",
     imgPath: "/images/screens/AlienExplorer.png",
-    link: "https://github.com/Canacepa/Alien-Explorer/deployments/github-pages",
+    link: "https://canacepa.github.io/Alien-Explorer/",
     ghlink: "https://github.com/Canacepa/Alien-Explorer",
     tech: "HTML · CSS · JAVASCRIPT · CANVAS",
     description: [

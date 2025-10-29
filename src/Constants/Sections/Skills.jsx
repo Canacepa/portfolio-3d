@@ -39,7 +39,7 @@ export default function Skills() {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Comment je peux contribuer & mes compétences clés"
-          sub="Ma valeur ajoutée"
+          sub="🤝 Ma valeur ajoutée"
         />
         <div className="tech-grid">
           {techStackIcons.map((techStackIcon) => (
@@ -65,27 +65,6 @@ export default function Skills() {
               </div>
             </div>
           ))}
-        </div>
-          <div className="tech-desc mx-auto">
-            <div className="rounded-xl mt-10 p-8 flex flex-col gap-4">
-              <h3 className="text-white text-2xl font-semibold mt-2">
-                Ancienne professionnelle du tourisme, aujourd’hui développeuse
-                web, je transforme les idées en solutions concrètes.
-              </h3>
-              <div className="text-white-50 mt-5 text-lg">
-                <p> Développeuse full stack junior, motivée et passionnée.</p>
-                <p>
-                  Forte d’une expérience en service client et en gestion
-                  opérationnelle, je possède d’excellentes compétences en
-                  communication et en résolution de problèmes.
-                </p>
-                <p>
-                  Je cherche à rejoindre une organisation dynamique où je
-                  pourrai concevoir des applications web performantes et
-                  intuitives.
-                </p>
-              </div>
-            </div>
         </div>
       </div>
     </div>

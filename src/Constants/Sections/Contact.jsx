@@ -1,10 +1,8 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import { TitleHeader } from "../Components/TitleHeader";
 import { ContactExperience } from "../Components/Models/ContactModel/ContactExperience";
-import { Button } from "../Components/Button";
-import resume from "/CV_Cassandre_Lavallard_2025.pdf";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -42,58 +40,21 @@ export default function Contact() {
     }
   };
 
-  const [downloading, setDownloading] = useState(false);
-
-  useEffect(() => {
-    setDownloading(false);
-  }, [downloading]);
-
-  const handleDownload = () => {
-    setDownloading(true);
-    const link = document.createElement("a");
-    link.href = resume;
-    link.download = "Cassandre-Lavallard-resume.pdf";
-    link.onload = () => {
-      link.remove();
-      setDownloading(false);
-    };
-    document.body.appendChild(link);
-    link.click();
-  };
-
   return (
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Prenons contact – Restons connectés"
-          sub="Vous avez une question ou idée ? Parlons-en !"
+          sub="💬 Vous avez une question ou idée ? Parlons-en ! 🚀"
         />
-
-        <div className="contact-desc mt-5 mx-auto flex flex-col items-center gap-6">
-          <p className=" text-white-50 text-lg">
-            Découvrez mon parcours complet en téléchargeant mon CV.
-          </p>
-          <button onClick={handleDownload} disabled={downloading} className="md:w-80 md:h-12 w-60 h-12 cta-wrapper">
-            <div className="cta-button group ">
-              <div className="bg-circle" />
-              <p className="text">
-                {downloading ? "Downloading..." : "Télécharger mon CV"}
-              </p>
-              <div className="arrow-wrapper">
-                <img src="/images/arrow-down.svg" alt="arrow" />
-              </div>
-            </div>
-          </button>
-        </div>
-
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="grid-12-cols mt-10 card-border rounded-xl"
-        >
-          <div className="xl:col-span-6">
-            <div className="flex-center p-10">
-              <div className="w-full flex flex-col gap-7">
+        <div className="grid-12-cols mt-16">
+          <div className="xl:col-span-5">
+            <div className="flex-center card-border rounded-xl p-10">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="w-full flex flex-col gap-7"
+              >
                 <div>
                   <label htmlFor="name">Nom</label>
                   <input
@@ -106,6 +67,7 @@ export default function Contact() {
                     required
                   />
                 </div>
+
                 <div>
                   <label htmlFor="email">Email</label>
                   <input
@@ -118,6 +80,7 @@ export default function Contact() {
                     required
                   />
                 </div>
+
                 <div>
                   <label htmlFor="name">Titre</label>
                   <input
@@ -130,12 +93,7 @@ export default function Contact() {
                     required
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="xl:col-span-6">
-            <div className="flex-center p-10">
-              <div className="w-full flex flex-col gap-7">
+
                 <div>
                   <label htmlFor="message">Message</label>
                   <textarea
@@ -144,23 +102,31 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Comment puis-je vous aider ?"
-                    rows="6"
+                    rows="5"
                     required
                   />
                 </div>
+
                 <button type="submit">
                   <div className="cta-button group">
                     <div className="bg-circle" />
-                    <p className="text">{loading ? "Envoi..." : "Envoyer"}</p>
+                    <p className="text">
+                      {loading ? "Envoi..." : "Envoyer"}
+                    </p>
                     <div className="arrow-wrapper">
                       <img src="/images/arrow-right.svg" alt="arrow" />
                     </div>
                   </div>
                 </button>
-              </div>
+              </form>
             </div>
           </div>
-        </form>
+          <div className="xl:col-span-7 min-h-96">
+            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+              <ContactExperience />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

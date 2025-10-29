@@ -1,38 +1,46 @@
-import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { useMediaQuery } from "react-responsive";
-import { Iles } from "./Iles";
-import { Particles } from "./Particles";
+import { Canvas } from "@react-three/fiber";
 
-const HeroExperience = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+import { Desk } from "./Desk";
 
+export default function HeroExperience() {
   return (
-    <Canvas camera={isTablet ? { position: [10, 10, -30], fov:60} :{ position: [15, 10, -15], fov:60} }>
-      <ambientLight intensity={1} color="white" />
+    <Canvas shadows camera={{ position: [7, 2, 7], fov: 45 }}>
+      <ambientLight intensity={0.5} color="#fff4e6" />
+
+      <directionalLight 
+        position={[5, 5, 3]} 
+        intensity={2.5} 
+        color="#ffd9b3" 
+       />
+
       <directionalLight
-        position={[10, 10, 5]}
-        color={"#BBB390"}
-        intensity={5}
+        position={[5, 9, 1]}
+        castShadow
+        intensity={2.5}
+        color="#ffd9b3"
       />
 
       <OrbitControls
-        enablePan={false} // Prevents panning of the scene
-        enableZoom={!isTablet} // Disables zoom on tablets
-        maxDistance={20} // Maximum distance for zooming out
-        minDistance={5} // Minimum distance for zooming in
-        minPolarAngle={Math.PI / 5} // Minimum angle for vertical rotation
-        maxPolarAngle={Math.PI / 2} // Maximum angle for vertical rotation
+        enableZoom={false}
+        minPolarAngle={Math.PI / 5}
+        maxPolarAngle={Math.PI / 2}
       />
 
-      <Particles count={200} />
+      <group scale={[1, 1, 1]}>
+        <mesh
+          receiveShadow
+          position={[0, -1.5, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        >
+          <circleGeometry args={[4, 64]} />
+          <meshStandardMaterial color={"#310032"}/>
+        </mesh>
+      </group>
 
-      <group scale={isMobile ? 0.7 : 0.9 } position={[-3, 1, 5]}>
-        <Iles />
+      <group scale={2} position={[0, -0.1, 1]} castShadow>
+        <Desk />
       </group>
     </Canvas>
   );
-};
-
-export { HeroExperience };
+}

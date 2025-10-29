@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 import { words } from "../Constants/Index";
 import { Button } from "../Components/Button";
-import HeroExperience from "../Components/Models/HeroModels/HeroExperience";
+import { HeroExperience } from "../Components/Models/HeroModels/HeroExperience";
 
 export default function Hero() {
   useGSAP(() => {
@@ -28,7 +28,7 @@ export default function Hero() {
               <h1>Bonjour,</h1>
               <h1>Je m'appelle Cassandre </h1>
               <h1>
-                Je suis
+                Et je suis
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
@@ -50,7 +50,7 @@ export default function Hero() {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Développeuse full-stack junior.
+              Basée en région parisienne.
             </p>
             <Button
               text="Voir mon travail"

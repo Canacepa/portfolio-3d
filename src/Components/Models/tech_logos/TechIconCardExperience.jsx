@@ -1,22 +1,30 @@
 import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import * as THREE from "three";
 
 export default function TechIconCardExperience({ model }) {
-  const scene = useGLTF(model.modelPath);
+  function Model({ model }) {
+    const scene = useGLTF(model.modelPath);
 
-  useEffect(() => {
-    if (model.name === "Interactive Developer") {
-      scene.scene.traverse((child) => {
-        if (child.isMesh) {
-          if (child.name === "Object_5") {
+    useEffect(() => {
+      if (model.name === "Interactive Developer") {
+        scene.scene.traverse((child) => {
+          if (child.isMesh && child.name === "Object_5") {
             child.material = new THREE.MeshStandardMaterial({ color: "white" });
           }
-        }
-      });
-    }
-  }, [scene]);
+        });
+      }
+    }, [scene, model.name]);
+
+    return (
+      <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
+        <group scale={model.scale} rotation={model.rotation}>
+          <primitive object={scene.scene} />
+        </group>
+      </Float>
+    );
+  }
 
   return (
     <Canvas>
@@ -30,11 +38,9 @@ export default function TechIconCardExperience({ model }) {
       />
       <Environment preset="city" />
 
-      <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
-        <group scale={model.scale} rotation={model.rotation}>
-          <primitive object={scene.scene} />
-        </group>
-      </Float>
+      <Suspense fallback={null}>
+        <Model model={model} />
+      </Suspense>
 
       <OrbitControls enableZoom={false} />
     </Canvas>
