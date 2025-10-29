@@ -76,7 +76,7 @@ const expCards = [
     title: "Portfolio 2025",
     imgPath: "/images/screens/portfolio-25.png",
     ghlink: "https://github.com/Canacepa/portfolio-3d",
-    tech: "HTML · CSS · JAVASCRIPT · REACT · THREE.JS · GSAP ",
+    tech: "HTML · CSS · JAVASCRIPT · REACT · VITE · THREE.JS · GSAP ",
     description: [
       "Portfolio 3D interactif et immersif, animation et interactivité.",
       "Conçu pour présenter mes projets et compétences à travers une navigation fluide et visuellement engageante.",
